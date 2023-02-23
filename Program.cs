@@ -144,9 +144,11 @@ void Magic()
 {
     Console.WriteLine("What would you like to know ? :");
     string question = Console.ReadLine();
-    if (question.Length > 0)
+    while (question.Length > 0)
     {
         MooseSays();
+        Console.WriteLine("What would you like to know ? :");
+        question = Console.ReadLine();
     }
 
     void MooseSays()
