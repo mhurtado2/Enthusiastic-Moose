@@ -1,5 +1,9 @@
-﻿
-using System;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+
 
 Main();
 
@@ -140,94 +144,49 @@ Magic();
 
 void Magic()
 {
-    Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
-    Console.WriteLine("--------------------------------------------");
-    Console.WriteLine();
-
-
-    void MooseSays(string message)
+    Console.WriteLine("What would you like to know ? :");
+    string question = Console.ReadLine();
+    if (question.Length > 0)
     {
-        Console.WriteLine($@"
-                                       _.--^^^--,
-                                    .'          `\
-  .-^^^^^^-.                      .'              |
- /          '.                   /            .-._/
-|             `.                |             |
- \              \          .-._ |          _   \
-  `^^'-.         \_.-.     \   `          ( \__/
-        |             )     '=.       .,   \
-       /             (         \     /  \  /
-     /`               `\        |   /    `'
-     '..-`\        _.-. `\ _.__/   .=.
-          |  _    / \  '.-`    `-.'  /
-          \_/ |  |   './ _     _  \.'
-               '-'    | /       \ |
-                      |  .-. .-.  |
-                      \ / o| |o \ /
-                       |   / \   |    {message}
-                      / `^`   `^` \
-                     /             \
-                    | '._.'         \
-                    |  /             |
-                     \ |             |
-                      ||    _    _   /
-                      /|\  (_\  /_) /
-                      \ \'._  ` '_.'
-                       `^^` `^^^`
-    ");
+        MooseSays();
     }
 
-    bool MooseAsks(string question)
+    void MooseSays()
     {
-        Console.Write($"{question}? : ");
-        string answer = Console.ReadLine().ToLower();
-
-        while (answer == "")
-        {
-            Console.Write($"{question}? : ");
-            answer = Console.ReadLine().ToLower();
-        }
-
-        if (answer != null)
-        {
-            List<string> phrases = new List<string>() {
-            "As I see it, yes.",
-            "Ask again later.",
-            "Better not tell you now.",
-            "Cannot predict now.",
-            "Concentrate and ask again.",
-            "Don’t count on it.",
-            "It is certain.",
-            "It is decidedly so.",
-            "Most likely.",
-            "My reply is no.",
-            "My sources say no.",
-            "Outlook not so good.",
-            "Outlook good.",
-            "Reply hazy, try again.",
-            "Signs point to yes.",
-            "Very doubtful.",
-            "Without a doubt.",
-            "Yes.",
-            "Yes – definitely.",
-            "You may rely on it."
+        string[] responses = {
+                "As I see it, yes.",
+                "Ask again later.",
+                "Better not tell you now.",
+                "Cannot predict now.",
+                "Concentrate and ask again.",
+                "Don’t count on it.",
+                "It is certain.",
+                "It is decidedly so.",
+                "Most likely.",
+                "My reply is no.",
+                "My sources say no.",
+                "Outlook not so good.",
+                "Outlook good.",
+                "Reply hazy, try again.",
+                "Signs point to yes.",
+                "Very doubtful.",
+                "Without a doubt.",
+                "Yes.",
+                "Yes – definitely.",
+                "You may rely on it."
         };
-            Random phrases = new Random();
-            string genRand = phrases.Next(1, 20);
-        }
-        else
-        {
-            return false;
-        }
+        Random r = new Random();
+        int answer = r.Next(0, 19);
+
+        Console.WriteLine(responses[answer]);
+
     }
 
-    MooseSays("H I, I'M  The Magic Moose !");
-    MooseAsks("what do you wanna know");
 
 }
 
 
-//     List<string> phrases = new List<string>() {
+// List<string> phrases = new List<string>() {
 //     "As I see it, yes.",
 //     "Ask again later.",
 //     "Better not tell you now.",
@@ -246,6 +205,6 @@ void Magic()
 //     "Very doubtful.",
 //     "Without a doubt.",
 //     "Yes.",
-//     "Yes – definitely.",
+//     "Yes definitely.",
 //     "You may rely on it."
 // };
