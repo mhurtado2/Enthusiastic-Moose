@@ -128,3 +128,101 @@ void Main()
     }
     questions();  //refactor by wrapping all question in question container
 }
+
+
+// when app starts magic moose should ask question
+//console.write
+//after user asks a question
+//console.readline
+//magic moose should reply with one of these responses 
+
+Magic();
+
+void Magic()
+{
+    Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
+    Console.WriteLine("--------------------------------------------");
+    Console.WriteLine();
+
+
+    void MooseSays(string message)
+    {
+        Console.WriteLine($@"
+                                       _.--^^^--,
+                                    .'          `\
+  .-^^^^^^-.                      .'              |
+ /          '.                   /            .-._/
+|             `.                |             |
+ \              \          .-._ |          _   \
+  `^^'-.         \_.-.     \   `          ( \__/
+        |             )     '=.       .,   \
+       /             (         \     /  \  /
+     /`               `\        |   /    `'
+     '..-`\        _.-. `\ _.__/   .=.
+          |  _    / \  '.-`    `-.'  /
+          \_/ |  |   './ _     _  \.'
+               '-'    | /       \ |
+                      |  .-. .-.  |
+                      \ / o| |o \ /
+                       |   / \   |    {message}
+                      / `^`   `^` \
+                     /             \
+                    | '._.'         \
+                    |  /             |
+                     \ |             |
+                      ||    _    _   /
+                      /|\  (_\  /_) /
+                      \ \'._  ` '_.'
+                       `^^` `^^^`
+    ");
+    }
+
+    bool MooseAsks(string question)
+    {
+        Console.Write($"{question}? : ");
+        string answer = Console.ReadLine().ToLower();
+
+        while (answer != null)
+        {
+            Console.Write($"{question}? : ");
+            answer = Console.ReadLine().ToLower();
+        }
+
+        if (answer == "y")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    MooseSays("H I, I'M  The Magic Moose !");
+    MooseAsks("what do you wanna know");
+
+}
+
+
+// List<string> words = new List<string>() { 
+// "As I see it, yes."
+// "Ask again later."
+// "Better not tell you now."
+// "Cannot predict now."
+// "Concentrate and ask again."
+// "Don’t count on it."
+// "It is certain."
+// "It is decidedly so."
+// "Most likely."
+// "My reply is no."
+// "My sources say no."
+// "Outlook not so good."
+// "Outlook good."
+// "Reply hazy, try again."
+// "Signs point to yes."
+// "Very doubtful."
+// "Without a doubt."
+// "Yes."
+// "Yes – definitely."
+// "You may rely on it."
+// };
