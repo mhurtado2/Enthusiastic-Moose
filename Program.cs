@@ -3,8 +3,6 @@ using System.Linq;
 using System.Collections.Generic;
 
 
-
-
 Main();
 
 void Main()
@@ -186,25 +184,49 @@ void Magic()
 }
 
 
-// List<string> phrases = new List<string>() {
-//     "As I see it, yes.",
-//     "Ask again later.",
-//     "Better not tell you now.",
-//     "Cannot predict now.",
-//     "Concentrate and ask again.",
-//     "Don’t count on it.",
-//     "It is certain.",
-//     "It is decidedly so.",
-//     "Most likely.",
-//     "My reply is no.",
-//     "My sources say no.",
-//     "Outlook not so good.",
-//     "Outlook good.",
-//     "Reply hazy, try again.",
-//     "Signs point to yes.",
-//     "Very doubtful.",
-//     "Without a doubt.",
-//     "Yes.",
-//     "Yes definitely.",
-//     "You may rely on it."
-// };
+RockPaperScissors();
+
+void RockPaperScissors()
+{
+    Console.WriteLine("What would you like to throw ? :");
+    string answer = Console.ReadLine();
+    Random r = new Random();
+    int pick = r.Next(0, 2);
+
+    if (answer == "rock")
+    {
+        Console.WriteLine(@"""
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+""");
+    }
+
+    if (answer == "paper")
+    {
+        Console.WriteLine(@"""
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+""");
+    }
+
+    if (answer == "scissors")
+    {
+        Console.WriteLine(@"""
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+""");
+    }
+
+}
