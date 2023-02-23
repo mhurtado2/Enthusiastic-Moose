@@ -190,43 +190,80 @@ void RockPaperScissors()
 {
     Console.WriteLine("What would you like to throw ? :");
     string answer = Console.ReadLine();
+    string[] play = { "rock", "paper", "scissors" };
     Random r = new Random();
     int pick = r.Next(0, 2);
 
     if (answer == "rock")
     {
         Console.WriteLine(@"""
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-""");
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    """);
     }
 
     if (answer == "paper")
     {
         Console.WriteLine(@"""
-     _______
----'    ____)____
-           ______)
-          _______)
-         _______)
----.__________)
-""");
+         _______
+    ---'    ____)____
+               ______)
+              _______)
+             _______)
+    ---.__________)
+    """);
     }
 
     if (answer == "scissors")
     {
         Console.WriteLine(@"""
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-""");
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    """);
     }
 
+    Console.WriteLine(play[pick]);
+    if (play[pick] == "rock")
+    {
+        Console.WriteLine(
+            @"""
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    """
+        );
+    }
+    if (play[pick] == "paper")
+    {
+        Console.WriteLine(@"""
+         _______
+    ---'    ____)____
+               ______)
+              _______)
+             _______)
+    ---.__________)
+    """);
+    }
+    if (play[pick] == "scissors")
+    {
+        Console.WriteLine(@"""
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    """);
+    }
 }
